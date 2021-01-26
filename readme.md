@@ -5,11 +5,11 @@ The Selected Person is Random Systems Georgia, a company incorporated according 
 
 As part of the monitoring and reporting requirments, a set of XML-based reports are required to be submitted on a periodic basis by approved operators and game service providers.
 
-The latest schema is:  [Version 1.2](../1_2/index.html)
+The latest schema is:  Version 1.2
 Please use the link to access the schema:
-- [Level 0](./1_2/level0)
-- [Level 1](../1_2/level1)
-- [Level 2](../1_2/level2/index.html)
-- [Gross Gaming Revenue Summary Report](../1_2/GGRSmry/index.html)
+- Level 0  
+- Level 1
+- Level 2
+- Gross Gaming Revenue Summary Report
 
 
