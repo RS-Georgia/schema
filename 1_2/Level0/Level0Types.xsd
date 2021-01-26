@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Title: Fundamental Data types for Online Gaming based on the Regulatory Reporting Interface (RRI) by Gaming Standards Association -->
+<!-- Maintaining Agent: Random Systems International Ltd  -->
+<!-- Owner: Random Systems International  Ltd -->
+<!-- Support: m@rsi.ge-->
+<!-- Version:20200810-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="rsi" targetNamespace="rsi" elementFormDefault="qualified" attributeFormDefault="unqualified" version="3" xml:lang="en">
+	<xs:simpleType name="CurrencyCode">
+		<xs:annotation>
+			<xs:documentation>All Currencies</xs:documentation>
+		</xs:annotation>
+		<xs:union memberTypes="ISOCurrencyCode VirtualCurrencyCode"/>
+	</xs:simpleType>
+	<xs:simpleType name="Description">
+		<xs:annotation>
+			<xs:documentation>Simple Character string datatype with max length of 128 chars</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="Text">
+			<xs:minLength value="0" fixed="false"/>
+			<xs:maxLength value="128" fixed="true"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EmailAddress">
+		<xs:annotation>
+			<xs:documentation>Email Address according to the RFC 882</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="Max255Text">
+			<xs:pattern value="[!#$%&amp;&apos;*+/0-9=?A-Z_`a-z{|}~^-]+(\.[!#$%&amp;&apos;*+/0-9=?A-Z_`a-z{|}~^-]+)*@([0-9A-Za-z-]+\.)+[A-Za-z]{2,63}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="IPv4Address">
+		<xs:annotation>
+			<xs:documentation>IPv4 address in dot-decimal notation as defined by IETF Standard. Equivalent to [0-255].[0-255].[0-255].[0-255]</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="Max255Text">
+			<xs:pattern value="((1?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\.){3}(1?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ISOCountryCode">
+		<xs:annotation>
+			<xs:documentation>ISO 3166 alpha-2</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="Max2Text">
+			<xs:pattern value="(A[D-GILMOQ-UWXZ]|B[ABD-JL-OQ-TVWYZ]|C[ACDF-IK-ORU-Z]|D[EJKMOZ]|E[CEGHRST]|F[IJKMOR]|G[ABD-ILMNP-UWY]|H[KMNRTU]|I[DEL-OQ-T]|J[EMOP]|K[EGHIMNPRWYZ]|L[ABCIKR-VY]|M[AC-HK-Z]|N[ACEFGILOPRUZ]|OM|P[AE-HK-NRSTWY]|QA|R[EOSUW]|S[A-EG-ORSTVXYZ]|T[CDFGHJ-ORTVWZ]|U[AGMSYZ]|V[ACEGINU]|W[FS]|Y[ET]|Z[AMW])"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ISOCurrencyCode">
+		<xs:annotation>
+			<xs:documentation>ISO 4217:2015 for fiat Currencies</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="Max3Text">
+			<xs:pattern value="A(DF|DP|ED|FA|FN|LL|MD|NG|OA|OK|ON|OR|RA|RL|RP|RS|TS|UD|WG|ZM|ZN)|B(AD|AM|BD|DT|EF|GL|GN|HD|IF|MD|ND|OB|OP|OV|RB|RC|RE|RL|RN|RR|SD|TN|WP|YB|YN|YR|ZD)|C(AD|DF|HE|HF|HW|LE|LF|LP|NY|OP|OU|RC|SD|SK|UC|UP|VE|YP|ZK)|D(DM|EM|JF|KK|OP|ZD)|E(CS|CV|EK|GP|RN|SA|SB|SP|TB|UR)|F(IM|JD|KP|RF)|G(BP|EL|HC|HS|IP|MD|NE|NF|QE|RD|TQ|WP)|H(KD|NL|RD|RK|TG|UF)|I(DR|EP|LP|LR|LS|NR|QD|RR|SJ|SK|TL)|J(MD|OD|PY)|K(ES|GS|HR|MF|PW|RW|WD|YD|ZT)|L(AK|BP|KR|BP|KR|RD|SL|TL|UF|VL|YD)|M(AD|AF|CF|DL|GA|GF|KD|KN|LV|MK|NT|OP|RO|TL|UR|VQ|VR|WK|XN|XP|XV|YR|ZM|ZN)|N(AD|GN|IO|LG|OK|PR|ZD)|OMR|P(AB|EN|GK|HP|KR|LN|TE|YG)|QAR|R(ON|SD|UB|WF)|S(AR|BD|CR|DG|EK|GD|HP|IT|KK|LL|ML|OS|RD|SP|TD|VC|YP|ZL)|T(HB|JS|MT|ND|OP|RY|TD|WD|ZS)|U(AH|GX|SD|SN|YI|YU)|ZS|V(AL|EF|ND|UV)|WST|X(AF|AG|AU|BA|BB|BC|BD|BT|CD|DR|FU|OK|PD|PF|PT|SU|TS|UA)|YER|Z(AR|MW|WL)"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ISODate">
+		<xs:annotation>
+			<xs:documentation>ISO 8601 Basic and Extended Notations as YYYY-MM-DD</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:date">
+			<xs:pattern value="(20[1-9][0-9])-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ISODateTime">
+		<xs:annotation>
+			<xs:documentation>ISO 8601 Basic and Extended Notations as YYYY-MM-DDTHH:MM:SS in UTC format</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:dateTime">
+			<xs:pattern value="(20[1-9][0-9])-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\.[0-9]{1,7})?(Z[-]?(([1-2][0-2])|[0-9]))?"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ISODuration">
+		<xs:annotation>
+			<xs:documentation>ISO 8601 Basic and Extended Notations as P(n)Y(n)M(n)DT(n)H(n)M(n)S</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:duration">
+			<xs:pattern value="P[0-9]{1,2}[HMDY]{1,1}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ISODurationDay">
+		<xs:annotation>
+			<xs:documentation>ISO 8601 Basic and Extended Notations as P(n)D</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:duration">
+			<xs:pattern value="P[1-3]?[0-9]D"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ISODurationMonth">
+		<xs:annotation>
+			<xs:documentation>ISO 8601 Basic and Extended Notations as P(n)M</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:duration">
+			<xs:pattern value="P[1-9][0-2]?M"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Max140Text">
+		<xs:annotation>
+			<xs:documentation>Simple Character string datatype with max length of 140 chars</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="Text">
+			<xs:minLength value="0" fixed="false"/>
+			<xs:maxLength value="140" fixed="true"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Max16Text">
+		<xs:annotation>
+			<xs:documentation>Simple Character string datatype with max length of 16 chars</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="Text">
+			<xs:minLength value="0" fixed="false"/>
+			<xs:maxLength value="16" fixed="true"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Max2048Text">
+		<xs:annotation>
+			<xs:documentation>Simple Character string datatype with max length of 2048 chars</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="Text">
+			<xs:minLength value="0" fixed="false"/>
+			<xs:maxLength value="2048" fixed="true"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Max255Text">
+		<xs:annotation>
+			<xs:documentation>Simple Character string datatype with max length of 256 chars</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="0" fixed="false"/>
+			<xs:maxLength value="255" fixed="true"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Max2Text">
+		<xs:annotation>
+			<xs:documentation>Simple Character string datatype with max length of 2 chars</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="Text">
+			<xs:minLength value="0" fixed="false"/>
+			<xs:maxLength value="2" fixed="true"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Max35Text">
+		<xs:annotation>
+			<xs:documentation>Simple Character string datatype with max length of 35 chars</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="Text">
+			<xs:minLength value="0" fixed="false"/>
+			<xs:maxLength value="35" fixed="true"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Max3Text">
+		<xs:annotation>
+			<xs:documentation>Simple Character string datatype with max length of 3 chars</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="Text">
+			<xs:minLength value="0" fixed="false"/>
+			<xs:maxLength value="3" fixed="true"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Max4Text">
+		<xs:annotation>
+			<xs:documentation>Simple Character string datatype with max length of 4 chars</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="Text">
+			<xs:minLength value="0" fixed="false"/>
+			<xs:maxLength value="4" fixed="true"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Max70Text">
+		<xs:annotation>
+			<xs:documentation>Simple Character string datatype with max length of 70 chars</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="Text">
+			<xs:minLength value="0" fixed="false"/>
+			<xs:maxLength value="70" fixed="true"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Meter">
+		<xs:annotation>
+			<xs:documentation>Generic Meter or Counter as found in Electronic Gaming Machines</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="0"/>
+			<xs:totalDigits value="20"/>
+			<xs:minInclusive value="0" fixed="true"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MonetaryAmount">
+		<xs:annotation>
+			<xs:documentation>Format for representing monetary values. Should be used only in conjuction of with a Currency element or attribute.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="8"/>
+			<xs:totalDigits value="18"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MonetaryAmountSmallDenom">
+		<xs:annotation>
+			<xs:documentation>Format for representing monetary values using smallest denomination. Should be used only in conjuction of with a Currency element or attribute.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="0"/>
+			<xs:totalDigits value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Number">
+		<xs:annotation>
+			<xs:documentation>Generic Numeric datatype</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="0"/>
+			<xs:totalDigits value="18"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PhoneNumber">
+		<xs:annotation>
+			<xs:documentation>Phone Number data type</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\+[0-9]{1,3}-[0-9()+\-]{1,30}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Text">
+		<xs:annotation>
+			<xs:documentation>Generic Text datatype</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="URL">
+		<xs:annotation>
+			<xs:documentation>Uniform Resource Locator as defined by IETF and W3C. The format is "scheme:[//authority]path[?query][#fragment]"</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="Max255Text">
+			<xs:pattern value="(https?://)? ([a-zA-Z0-9_~%-]+\.)+[A-Za-z]{2,7} (/[a-zA-Z0-9_~%-]+)*"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VirtualCurrencyCode">
+		<xs:annotation>
+			<xs:documentation>Codes for Virtual Currencies. The Codes for virtual currency are published seperately from this schema</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="Max3Text">
+			<xs:pattern value="[A-Z]{3,3}"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
