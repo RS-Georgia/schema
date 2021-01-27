@@ -7,7 +7,7 @@ As part of the monitoring and reporting requirments, a set of XML-based reports 
 
 The latest schema is:  Version 1.2. 
 
-###Format of the Schema
+### Format of the Schema
 The schema is loosely based on the upcoming European standard for monitoring of online gaming. It uses different levels of schema that differentiates between data types. Each level inherets from the previous level, where level 0 is the most fundamental level.
 
 - Level 0  To represent fundamental simple types such as email, time stamp, URL, currency, etc. These are defined by global standards and are unlikely ever to change.
