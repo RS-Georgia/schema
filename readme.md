@@ -13,6 +13,9 @@ The schema is loosely based on the upcoming European standard for monitoring of 
 - Level 0  To represent fundamental simple types such as email, time stamp, URL, currency, etc. These are defined by global standards and are unlikely ever to change.
 - Level 1  To represent complex types made of Level 0 simple types such as Address, personal details, personal identification, etc. 
 - Level 2  To represent Complex types that pertain to the Georgian reporting mecahnism such as Header.
-- Level 3  Complete reports such as the Gross Gaming Revenue Summary Report.
+- Level 3  Complete reports such as the Gross Gaming Revenue Summary Report. 
+
+### Gross Gaming Revenue Report
+The first report is a statutory report that needs to be submitted by B2C operators on a **daily basis**. It includes totals across each game vertical. Full documentation can be found [here](https://www.rsi.ge/schema/1_2/GGRSmry)
 
 
