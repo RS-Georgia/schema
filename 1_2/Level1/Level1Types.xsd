@@ -40,7 +40,7 @@
 			<xs:enumeration value="OTHR"/>
 		</xs:restriction>
 	</xs:simpleType>
-		<xs:simpleType name="GameVertical">
+	<xs:simpleType name="GameVertical">
 		<xs:annotation>
 			<xs:documentation>Game Verticals</xs:documentation>
 		</xs:annotation>
@@ -152,7 +152,7 @@
 			<xs:documentation>Document Header</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="Tp" type="DocumentTypes">
+			<xs:element name="Tp" type="DocumentType">
 				<xs:annotation>
 					<xs:documentation>Type of Document.</xs:documentation>
 				</xs:annotation>
@@ -162,7 +162,7 @@
 					<xs:documentation>Submission Report Period. </xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Ctgy">
+			<xs:element name="Ctgy" type="CategoryType">
 				<xs:annotation>
 					<xs:documentation>Report Category</xs:documentation>
 				</xs:annotation>
@@ -209,7 +209,18 @@
 			<xs:enumeration value="Other"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="DocumentTypes">
+	<xs:simpleType name="CategoryType">
+		<xs:annotation>
+			<xs:documentation>Report Category Type</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="Max16Text">
+			<xs:enumeration value="Summary"/>
+			<xs:enumeration value="Detailed"/>
+			<xs:enumeration value="Test"/>
+			<xs:enumeration value="Other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DocumentType">
 		<xs:annotation>
 			<xs:documentation>Document Type</xs:documentation>
 		</xs:annotation>
