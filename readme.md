@@ -5,7 +5,7 @@ The Selected Person is Random Systems Georgia, a company incorporated according 
 
 As part of the monitoring and reporting requirments, a set of XML-based reports are required to be submitted on a periodic basis by approved operators and game service providers.
 
-The latest schema is:  Version 1.2. 
+The latest schema is:  Version 1.2.1 
 
 ### Format of the Schema
 The schema is loosely based on the upcoming European standard for monitoring of online gaming. It uses different levels of schema that differentiates between data types. Each level inherets from the previous level, where level 0 is the most fundamental level.
@@ -19,4 +19,5 @@ The schema is loosely based on the upcoming European standard for monitoring of 
 The first report is a statutory report that needs to be submitted by B2C operators on a **daily basis**. It includes totals across each game vertical. Full documentation can be found [here](https://www.rsi.ge/schema/1_2/GGRSmry)
 
 
-
+#### Version 1.2.1
+Added the `categoryType` simpletype to Level1Types to cast `Category` element in `DocumentHeaderType` complex type. The Java XML engine picks on this and returns an object otherwise. Thanks Nonika for highlighting the problem.
