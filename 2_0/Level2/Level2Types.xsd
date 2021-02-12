@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2021 (x64) (http://www.altova.com) by Mario Galea (Random Consulting Ltd) -->
+<!-- by Mario Galea (Random Consulting Ltd) -->
+<!-- Title: Common Data types based on the Regulatory Reporting Interface (RRI) by Gaming Standards Association -->
+<!-- Maintaining Agent: Random Systems International -->
+<!-- Owner: Random Systems International -->
+<!-- Support: m@RSI.ge-->
+<!-- Version:20200810-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="rsg" xmlns:rsi="rsi" targetNamespace="rsg" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="rsi" schemaLocation=".././Level1/Level1Types.xsd"/>
+	<xs:complexType name="B2CSummaryCashFlowType">
+		<xs:sequence>
+			<xs:element name="SmryPlyrAccntTrf" type="B2CSummaryPlayerAccountTransfersType"/>
+			<xs:element name="SmryGmWgrTrf" type="B2CSummaryGameAccounting"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="B2CSummaryPlayerAccountTransfersType">
+		<xs:sequence>
+			<xs:element name="TtlDpsts" type="rsi:MonetaryAmountPositive">
+				<xs:annotation>
+					<xs:documentation>Total Amount Deposited by Players</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlWthdrwls" type="rsi:MonetaryAmountPositive">
+				<xs:annotation>
+					<xs:documentation>Total Withdrawals by Players</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="B2CSummaryGameAccounting">
+		<xs:sequence>
+			<xs:element name="TtlAmttoGm" type="rsi:MonetaryAmountPositive">
+				<xs:annotation>
+					<xs:documentation>Totla Amount of Funds from Players to Games.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlAmtfrmGm" type="rsi:MonetaryAmountPositive">
+				<xs:annotation>
+					<xs:documentation>Total amount of funds transfers from Games to Players</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlAmtInPly" type="rsi:MonetaryAmountPositive">
+				<xs:annotation>
+					<xs:documentation>Total Amount of funds currently pending in Games </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="B2CSummaryGameAccountingByGameVertical">
+		<xs:sequence>
+			<xs:element name="GameVertical" type="rsi:GameVerticalType">
+				<xs:annotation>
+					<xs:documentation>Game Sector such as Casino, Sportbetting, Live Casino and Poker</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="GmAcctSmry" type="B2CSummaryGameAccounting">
+				<xs:annotation>
+					<xs:documentation>Game Accounting Summary</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BettingSummaryBySalesVertical">
+		<xs:sequence>
+			<xs:element name="SalesChannel" type="rsi:GameVerticalType">
+				<xs:annotation>
+					<xs:documentation>Betting Summary By Sales Vertical</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BettingAcctSmry" type="B2CBettingSummary">
+				<xs:annotation>
+					<xs:documentation>Game Accounting Summary</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="B2CBettingSummary">
+		<xs:sequence>
+			<xs:element name="TtlStakeAmt" type="rsi:MonetaryAmountPositive">
+				<xs:annotation>
+					<xs:documentation>Total Stake Amount in GEL of bets during period</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlPayOutAmt" type="rsi:MonetaryAmountPositive">
+				<xs:annotation>
+					<xs:documentation>Total amount in GEl paid out   to players for betting wins during period</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlVoidedAmt" type="rsi:MonetaryAmountPositive">
+				<xs:annotation>
+					<xs:documentation>Total amount in GEl paid out   to players for betting wins during period</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlStkPendingAmt" type="rsi:MonetaryAmountPositive">
+				<xs:annotation>
+					<xs:documentation>Total Amount in GEL currently pending stakes  </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlNmbrBetSlipsSold" type="rsi:Meter">
+				<xs:annotation>
+					<xs:documentation>Total number of bet slips sold during the period.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlNmbrBetSlipsCancelled" type="rsi:Meter">
+				<xs:annotation>
+					<xs:documentation>Total number of Bet slips cancelled (ie. players got paid).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlNmbrBetSlipsVoided" type="rsi:Meter">
+				<xs:annotation>
+					<xs:documentation>Total number of bet slips voided (i.e. where not paid even though the events all closed)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlNmbrBetsPlaced">
+				<xs:annotation>
+					<xs:documentation>Total number of bets placed in Georgia</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlNmbrP2PBetsPlaced" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Total number of P2P bets placed in Georgia. Beting Exchange Only</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlP2PStakeAmt" minOccurs="0"/>
+			<xs:element name="TtlNmbrVIrtualBets" minOccurs="0"/>
+			<xs:element name="TtlVirtualBetsAmt" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
