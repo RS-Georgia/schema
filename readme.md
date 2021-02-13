@@ -5,7 +5,7 @@ The Selected Person is Random Systems Georgia, a company incorporated according 
 
 As part of the monitoring and reporting requirments, a set of XML-based reports are required to be submitted on a periodic basis by approved operators and game service providers.
 
-*** The latest schema is: Version 2_0 ***
+**The latest schema is: Version 2_0**
 
 ### Format of the Schema
 The schema is loosely based on the upcoming European standard for monitoring of online gaming. It uses different levels of schema that differentiates between data types. Each level inherets from the previous level, where level 0 is the most fundamental level.
@@ -25,5 +25,5 @@ The new schema is [BettingSmryCompliance.xsd](https://github.com/RS-Georgia/sche
 
 With this version there also structural changes:
 1. The Schema naming convention will be in full i.e ...Compliance.xsd, etc. The use of short names (like ...comp.xsd) is depracted. 
-2. The file naming convention of an XML report shall start with the **license number issued by RS related to the specific gaming activity**. Operators normally have two licenses - one for betting and another for other games. Use the license number for betting on BettingSmryCompliance.xsd  and the other license number for B2CSmryCompliance.xsd
+2. The file naming convention of an XML report shall start with the **license number issued by RS related to the specific gaming activity**. Operators normally have two licenses issued by RS - one for betting and another for other games. Use the license number for betting on BettingSmryCompliance.xsd  and the other license number for B2CSmryCompliance.xsd
 
