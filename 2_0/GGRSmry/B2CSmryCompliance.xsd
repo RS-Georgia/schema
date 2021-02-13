@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2021 (x64) (http://www.altova.com) by Mario Galea (Random Consulting Ltd) -->
 <!-- Title: GGR Compiance report for Georgia (GE) -->
 <!-- To be filled by B2C operators -->
 <!-- Maintaining Agent: Random Systems International -->
 <!-- Owner: Random Systems International -->
 <!-- Support: m@RSI.ge-->
-<!-- Version:20200810-->
+<!-- Version:2.0-->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="rsg" xmlns:rsi="rsi" targetNamespace="rsg" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:include schemaLocation=".././Level2/Level2Types.xsd"/>
 	<xs:import namespace="rsi" schemaLocation=".././Level1/Level1Types.xsd"/>
