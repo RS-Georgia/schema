@@ -21,7 +21,7 @@ The first report is a statutory report that needs to be submitted by B2C operato
 #### Version 2.0 (12/02/2021)
 After our meetings with authorities this week on the reporting requirements, we realized that more data is required for sport betting. Rather than mofifying the orginal schema, we added a new one to deal only with betting submissions. This means that Version 1.3 has been superceeded by Version 2.0 which is now available as an RFC (Request for Comments) until it becomes official on (20/02/2021).
 
-The new schema is [BettingSmryCompliance.xsd](https://www.github.com/RS-georgia/schema/2_0/GGRSmry/BettingSmryCompliance.html)
+The new schema is [BettingSmryCompliance.xsd](https://github.com/RS-Georgia/schema/blob/main/2_0/GGRSmry/BettingSmryCompliance.html)
 
 With this version there also structural changes:
 1. The Schema naming convention will be in full i.e ...Compliance.xsd, etc. The use of short names (like ...comp.xsd) is depracted. 
