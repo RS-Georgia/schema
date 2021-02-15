@@ -10,12 +10,12 @@
 	<xs:import namespace="rsi" schemaLocation=".././Level1/Level1Types.xsd"/>
 	<xs:element name="Report">
 		<xs:annotation>
-			<xs:documentation>Statutory Report for Betting Activities in Georgia. This Report shall be submitted by B2C operators on a daily basis</xs:documentation>
+			<xs:documentation>Statutory Report for Betting Activities in Georgia. This report shall be submitted by B2C operators on a daily basis</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="Header" type="rsi:DocumentHeader"/>
-				<xs:element name="B2CSmryGGRbyGmVrtcl" type="BettingSummaryBySalesVertical" maxOccurs="unbounded"/>
+				<xs:element name="BettingSmrybySlsChnl" type="BettingSummaryBySalesChannel" maxOccurs="3"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
