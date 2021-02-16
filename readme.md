@@ -15,6 +15,17 @@ The schema is loosely based on the upcoming European standard for monitoring of 
 - Level 2  To represent Complex types that pertain to the Georgian reporting mecahnism such as Header.
 - Level 3  Complete reports such as the Gross Gaming Revenue Summary Report. 
 
+### Naming Convention of data types (simple and complex)
+We try to keep to a convention when naming data types to aid developers in what we are expecting. The following are general helpful hints:
+
+- **Ttl** means **Total** - We are expecting a value that is a summation of detailed records (SQL statement: SELECT SUM(column_name)... )
+- **Amt** means **Amount** - We expect a decimal number that represent a financial amount (in GEL)
+- **Nmbr** means **Number** - We expect a positive integer
+
+The combination of the above also holds:
+
+-**TtlNmbr** means **Total Number** - We expect a count  (SQL statement: SELECT Count(column_name)... )
+
 ### Gross Gaming Revenue Report
 The first report is a statutory report that needs to be submitted by B2C operators on a **daily basis**. It includes totals across each game vertical. Full documentation can be found [here](https://www.rsi.ge/schema/2_0/GGRSmry)
 
@@ -27,3 +38,27 @@ With this version there also structural changes:
 1. The Schema naming convention will be in full i.e ...Compliance.xsd, etc. The use of short names (like ...comp.xsd) is depracted. 
 2. The file naming convention of an XML report shall start with the **license number issued by RS related to the specific gaming activity**. Operators normally have two licenses issued by RS - one for betting and another for other games. Use the license number for betting on BettingSmryCompliance.xsd  and the other license number for B2CSmryCompliance.xsd
 
+### Clarifications on the BettingSmryCompliance Schema
+We have recieved a number of queires surrounding the betting schema. The following explanation might help clarify the terms used in the rpeort:
+
+#### Sales Channels
+There are predominantly two sales channels in Georgia
+1. Online, and
+2. Lanbased
+
+Operators must distinguish between these two sales channels when reporting betting summaries.
+
+
+#### Meaning of Terms
+- Total Stake Amount - total amount of **new** bets (new stakes) in the reported period (24-hours)
+- Total PayOut Amount - total amount of wins paid out on settled bets to players in the reported period. 
+- Total Voided Amount - total amount of stakes voided due to cancelled events or market suspension,etc.  in the reported period. 
+- Total Stake Pending Amt - total amount held in **all** open bets to-date.
+- Total Number of BetSlips Sold - total number of betslips sold during the reported period. This includes also any betslips opened that were closed during the same reported period (for example live betting).
+- Total Number of BetSlips Settled - total number of settled betslips during the reported period
+- Total Number of BetSlips Voided  - total number of betslips rejected due to cancelled events or market suspension,etc
+- Total Number of Bets Placed - total number of new bets (that is, the bets in the betslips above)
+- Total Number of P2P Bets Placed – (Only for operators who offer such games) total number of bets placed on P2P (betting exchange)
+- Total P2P Stake Amount – Total Amount of bets taken on Betting Exchanges during the reported period
+- Total Number of Virtual Bets - Total Number of bets taken on Virtual Games (i.e games that are not in real life)
+- Total Virtual Bets Amount - Total Amount of bets taken on Virtual Games during the reported period
