@@ -48,17 +48,16 @@ There are predominantly two sales channels in Georgia
 
 Operators must distinguish between these two sales channels when reporting betting summaries.
 
-
 #### Meaning of Terms
-- Total Stake Amount - total amount of **new** bets (new stakes) in the reported period (24-hours)
-- Total PayOut Amount - total amount of wins paid out on settled bets to players in the reported period. 
-- Total Voided Amount - total amount of stakes voided due to cancelled events or market suspension,etc.  in the reported period. 
-- Total Stake Pending Amt - total amount held in **all** open bets to-date.
-- Total Number of BetSlips Sold - total number of betslips sold during the reported period. This includes also any betslips opened that were closed during the same reported period (for example live betting).
-- Total Number of BetSlips Settled - total number of settled betslips during the reported period
-- Total Number of BetSlips Voided  - total number of betslips rejected due to cancelled events or market suspension,etc
-- Total Number of Bets Placed - total number of new bets (that is, the bets in the betslips above)
-- Total Number of P2P Bets Placed – (Only for operators who offer such games) total number of bets placed on P2P (betting exchange)
-- Total P2P Stake Amount – Total Amount of bets taken on Betting Exchanges during the reported period
-- Total Number of Virtual Bets - Total Number of bets taken on Virtual Games (i.e games that are not in real life)
-- Total Virtual Bets Amount - Total Amount of bets taken on Virtual Games during the reported period
+- **Total Stake Amount** - total amount of **new** bets (new stakes) in the reported period (24-hours)
+- **Total PayOut Amount** - total amount of wins paid out on settled bets to players in the reported period. 
+- **Total Voided Amount** - total amount of stakes voided due to cancelled events or market suspension,etc.  in the reported period. 
+- **Total Stake Pending Amount** - total amount held in **all** open bets to-date.
+- **Total Number of BetSlips Sold** - total number of betslips sold during the reported period. This includes also any betslips opened that were closed during the same reported period (for example live betting).
+- **Total Number of BetSlips Settled** - total number of settled betslips during the reported period
+- **Total Number of BetSlips Voided**  - total number of betslips rejected due to cancelled events or market suspension,etc
+- **Total Number of Bets Placed** - total number of new bets (that is, the bets in the betslips above)
+- **Total Number of P2P Bets Placed** – (*Only for operators who offer such games*) total number of bets placed on P2P (betting exchange)
+- **Total P2P Stake Amount** – Total Amount of bets taken on Betting Exchanges during the reported period
+- **Total Number of Virtual Bets** - Total Number of bets taken on Virtual Games (i.e games that are not in real life)
+- **Total Virtual Bets Amount** - Total Amount of bets taken on Virtual Games during the reported period
