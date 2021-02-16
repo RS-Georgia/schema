@@ -21,6 +21,8 @@ We try to keep to a convention when naming data types to aid developers in what 
 - **Ttl** means **Total** - We are expecting a value that is a summation of detailed records (SQL statement: SELECT SUM(column_name)... )
 - **Amt** means **Amount** - We expect a decimal number that represent a financial amount (in GEL)
 - **Nmbr** means **Number** - We expect a positive integer
+- **Smry** means **Summary** - Means that this data object represent summaries ie its content is always in SUMS and COUNTS.
+- **Dtld** means **Detailed** - Means that this data object represents detailed information. We are expecting transaction level information.
 
 The combination of the above also holds:
 
