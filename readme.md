@@ -6,6 +6,7 @@ The Selected Person is Random Systems Georgia, a company incorporated according 
 As part of the monitoring and reporting requirments, a set of XML-based reports are required to be submitted on a periodic basis by approved operators and game service providers.
 
 **The latest schema is: Version 2.0.0**
+**The upcoming schema is: Version 3.0.0** Currently in Release Candidate.
 
 ### Format of the Schema
 The schema is loosely based on the upcoming European standard for monitoring of online gaming. It uses different levels of schema that differentiates between data types. Each level inherets from the previous level, where level 0 is the most fundamental level.
@@ -63,3 +64,8 @@ Operators must distinguish between these two sales channels when reporting betti
 - **Total P2P Stake Amount** – Total Amount of bets taken on Betting Exchanges during the reported period
 - **Total Number of Virtual Bets** - Total Number of bets taken on Virtual Games (i.e games that are not in real life)
 - **Total Virtual Bets Amount** - Total Amount of bets taken on Virtual Games during the reported period
+
+### Version 3.0.0 (17/02/2021) Release Candidate
+This version launches the reporting schema for B2B operators. It does not affect B2C operators and as such Version 2 and Version 3 are interchangeable for B2C operators. This version necesstated renaming some elements in Level 2 Schema so that it accomodates for the new B2B requirements.
+
+There is detailed dcoumentation under the the same folder as the schema. Note that as a Release Candidate the new Schema is still as a branch on this repo. Make sure that you switch from the main barcnh to Version 3.
