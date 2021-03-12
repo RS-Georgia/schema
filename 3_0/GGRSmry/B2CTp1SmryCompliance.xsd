@@ -5,7 +5,7 @@
 <!-- Owner: Random Systems International -->
 <!-- Support: m@RSI.ge-->
 <!-- Version:2.0-->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="rsg" xmlns:rsi="rsi" targetNamespace="rsg" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.rsi.ge/schema/3_0/GGRsmry" xmlns:rsi="rsi" targetNamespace="http://www.rsi.ge/schema/3_0/GGRsmry" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:include schemaLocation=".././Level2/Level2Types.xsd"/>
 	<xs:import namespace="rsi" schemaLocation=".././Level1/Level1Types.xsd"/>
 	<xs:element name="Report">
