@@ -5,8 +5,8 @@
 <!-- Maintaining Agent: Random Systems International -->
 <!-- Owner: Random Systems International -->
 <!-- Support: m@RSI.ge-->
-<!-- Version:20200810-->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.rsi.ge/schema" xmlns:rsi="rsi" targetNamespace="http://www.rsi.ge/schema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<!-- Version:3.1-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="rge" xmlns:rsi="rsi" targetNamespace="rge" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:import namespace="rsi" schemaLocation=".././Level1/Level1Types.xsd"/>
 	<xs:complexType name="B2BTp1GameSummaryByServiceProvider">
 		<xs:sequence>

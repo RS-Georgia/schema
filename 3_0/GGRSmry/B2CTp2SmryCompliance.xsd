@@ -5,9 +5,9 @@
 <!-- Maintaining Agent: Random Systems International -->
 <!-- Owner: Random Systems International -->
 <!-- Support: m@RSI.ge-->
-<!-- Version:2.0-->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="rsg" xmlns:rsi="rsi" targetNamespace="rsg" elementFormDefault="qualified" attributeFormDefault="unqualified">
-	<xs:include schemaLocation=".././Level2/Level2Types.xsd"/>
+<!-- Version:3.0-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rs="http://www.rsi.ge/schema/3_0/GGRSmry" xmlns:rge="rge" xmlns:rsi="rsi" targetNamespace="http://www.rsi.ge/schema/3_0/GGRSmry" elementFormDefault="unqualified" attributeFormDefault="unqualified">	
+	<xs:import namespace="rge" schemaLocation=".././Level2/Level2Types.xsd"/>
 	<xs:import namespace="rsi" schemaLocation=".././Level1/Level1Types.xsd"/>
 	<xs:element name="Report">
 		<xs:annotation>
@@ -16,7 +16,7 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="Header" type="rsi:DocumentHeader"/>
-				<xs:element name="BettingSmrybySlsChnl" type="BettingSummaryBySalesChannel" maxOccurs="3"/>
+				<xs:element name="BettingSmrybySlsChnl" type="rge:BettingSummaryBySalesChannel" maxOccurs="3"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
