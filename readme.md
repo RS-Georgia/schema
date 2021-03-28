@@ -5,8 +5,7 @@ The Selected Person is Random Systems Georgia, a company incorporated according 
 
 As part of the monitoring and reporting requirments, a set of XML-based reports are required to be submitted on a periodic basis by approved operators and game service providers.
 
-**The latest schema is: Version 2.0.0**
-**The upcoming schema is: Version 3.0.0** Currently in Release Candidate.
+**The latest schema is: [Version 3.1.0 (28/03/2021) Official Release][]**
 
 ### Format of the Schema
 The schema is loosely based on the upcoming European standard for monitoring of online gaming. It uses different levels of schema that differentiates between data types. Each level inherets from the previous level, where level 0 is the most fundamental level.
@@ -69,3 +68,10 @@ Operators must distinguish between these two sales channels when reporting betti
 This version launches the reporting schema for B2B operators. It does not affect B2C operators and as such Version 2 and Version 3 are interchangeable for B2C operators. This version necesstated renaming some elements in Level 2 Schema so that it accomodates for the new B2B requirements.
 
 There is detailed dcoumentation under the the same folder as the schema. Note that as a Release Candidate the new Schema is still as a branch on this repo. Make sure that you switch from the main barcnh to Version 3.
+
+### Version 3.1.0 (28/03/2021) Official Release
+Version 3.1 is the Official Release and all operators are expected to load their files from March 1st using this version. There is only ONE change from 3.0 but is significant as to the functionaity of the reporting platfrom:
+
+The `Document Header` element now includes a mandatory element `VrsNb` which is of datatype `counter`. The `VrsNb` element holds the report version number and **must** be the same as the version number in the filename. Reports must always start with report version 1 (01 or V01). Every time a report for the same day needs to be re-uploaded for some reason, the version number must be incremented by 1.
+
+Our API allows quering the Document Headers of uploaded reports that have been already accepted by the system. Therefore the client side can be designed as stateless. 
