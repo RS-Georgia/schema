@@ -96,7 +96,7 @@
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="TtlP2PStakeAmt" type="rsi:MonetaryAmountPositive" minOccurs="0"/>
-			<xs:element name="TtlNmbrVIrtualBets" type="rsi:Meter" minOccurs="0"/>
+			<xs:element name="TtlNmbrVirtualBets" type="rsi:Meter" minOccurs="0"/>
 			<xs:element name="TtlVirtualBetsAmt" type="rsi:MonetaryAmountPositive" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>

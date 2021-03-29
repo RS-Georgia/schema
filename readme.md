@@ -75,3 +75,6 @@ Version 3.1 is the Official Release and all operators are expected to load their
 The `Document Header` element now includes a mandatory element `VrsNb` which is of datatype `counter`. The `VrsNb` element holds the report version number and **must** be the same as the version number in the filename. Reports must always start with report version 1 (01 or V01). Every time a report for the same day needs to be re-uploaded for some reason, the version number must be incremented by 1.
 
 Our API allows quering the Document Headers of uploaded reports that have been already accepted by the system. Therefore the client side can be designed as stateless. 
+
+### Version 3.1.1 (29/03/2021)
+Corrected an error in `TtlNmbrVirtualBets` element spelling in B2BTp2Compliance Schema.
