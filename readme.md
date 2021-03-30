@@ -78,3 +78,23 @@ Our API allows quering the Document Headers of uploaded reports that have been a
 
 ### Version 3.1.1 (29/03/2021)
 Corrected an error in `TtlNmbrVirtualBets` element spelling in B2BTp2Compliance Schema.
+We have added more Vertical Gaming Types to include the following:
+
+			<xs:enumeration value="Casino"/>
+			<xs:enumeration value="Sportsbetting"/>
+			<xs:enumeration value="Poker"/>
+			<xs:enumeration value="Live Gaming"/>
+			<xs:enumeration value="Tournament"/>
+			<xs:enumeration value="P2P Games"/>
+			<xs:enumeration value="Other"/>
+
+These enumarations do not affect technically the schema but they affect the operators finacially as certain games GGR is based on commission not Coin In - Coin Out so the wokings for the fees will be wrong. Update B2CTp2Compliance report accordingly. 
+
+- `Use `Tournament` for all games that are held in Tournaments inlcuding poker, slots tournaments and black jack tournaments.
+
+- Use `Pools` for parimutuel games normally in horseracing events.
+
+- Use `P2P Games` for games such as dominoes, backgammon, rummy, etc.
+
+We have also discovered an error in the Sales Channel Types in the B2CTp2Compliance Report. Please update this field to  `online` and not `sportsbetting`.
+
