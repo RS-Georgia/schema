@@ -137,7 +137,7 @@
 		<xs:sequence>
 			<xs:element name="AggrtID" type="rsi:Description">
 				<xs:annotation>
-					<xs:documentation>Game ID as identified by the B2B platform</xs:documentation>
+					<xs:documentation>Aggregator ID as identified by the B2B platform</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="GmAcctSmryByRGS" type="GameSummaryByRemoteGamingSystem" maxOccurs="unbounded">
@@ -179,7 +179,7 @@
 		<xs:sequence>
 			<xs:element name="RmtGmSysID" type="rsi:Description">
 				<xs:annotation>
-					<xs:documentation>Game ID as identified by the B2B platform</xs:documentation>
+					<xs:documentation>Remote Gaming System ID as identified by the B2B platform or Aggregator</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="GmAcctSmryByOprByGm" type="GameSummaryByB2COperatorByGame" maxOccurs="unbounded">
