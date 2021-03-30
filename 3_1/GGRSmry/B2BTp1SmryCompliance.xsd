@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2021 (x64) (http://www.altova.com) by Mario Galea (Random Consulting Ltd) -->
 <!-- Title: B2B Type 1 GGR Compiance report for Georgia (GE) -->
 <!-- To be filled by B2B operators -->
 <!-- Maintaining Agent: Random Systems International -->
@@ -10,7 +11,7 @@
 	<xs:import namespace="rsi" schemaLocation=".././Level1/Level1Types.xsd"/>
 	<xs:element name="Report">
 		<xs:annotation>
-			<xs:documentation>Statutory Report for Gaming Activities in Georgia. This Report has to be submitted by B2C operators on a daily basis</xs:documentation>
+			<xs:documentation>Statutory Report for Gaming Activities in Georgia. This Report has to be submitted by B2B operators on a daily basis</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>

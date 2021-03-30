@@ -4,7 +4,7 @@
 <!-- Maintaining Agent: Random Systems International -->
 <!-- Owner: Random Systems International -->
 <!-- Support: m@RSI.ge-->
-<!-- Version:20200810-->
+<!-- Version:3.0.2-->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="rsi" targetNamespace="rsi" elementFormDefault="qualified" attributeFormDefault="unqualified" version="0" xml:lang="en">
 	<xs:include schemaLocation=".././Level0/Level0Types.xsd"/>
 	<xs:simpleType name="AccountStatusTypes">
@@ -49,6 +49,9 @@
 			<xs:enumeration value="Sportsbetting"/>
 			<xs:enumeration value="Poker"/>
 			<xs:enumeration value="Live Gaming"/>
+			<xs:enumeration value="Tournament"/>
+			<xs:enumeration value="Pools"/>
+			<xs:enumeration value="P2P Games"/>
 			<xs:enumeration value="Other"/>
 		</xs:restriction>
 	</xs:simpleType>
@@ -60,6 +63,7 @@
 			<xs:enumeration value="Online"/>
 			<xs:enumeration value="Landbased"/>
 			<xs:enumeration value="Casino"/>
+			<xs:enumeration value="Slot Hall"/>
 			<xs:enumeration value="Other"/>
 		</xs:restriction>
 	</xs:simpleType>

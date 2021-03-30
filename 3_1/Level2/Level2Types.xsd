@@ -102,7 +102,7 @@
 	</xs:complexType>
 	<xs:complexType name="BettingSummaryBySalesChannel">
 		<xs:sequence>
-			<xs:element name="SalesChannel" type="rsi:GameVerticalType">
+			<xs:element name="SalesChannel" type="rsi:SalesChannelType">
 				<xs:annotation>
 					<xs:documentation>Betting Summary By Sales Vertical</xs:documentation>
 				</xs:annotation>
