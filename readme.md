@@ -6,6 +6,7 @@ The Selected Person is Random Systems Georgia, a company incorporated according 
 As part of the monitoring and reporting requirments, a set of XML-based reports are required to be submitted on a periodic basis by approved operators and game service providers.
 
 **The latest schema is: Version 3.1.0 (28/03/2021) Official Release [See below]**
+**The upcoming schema is: Version 4.0.0 (07/04/2021) Official Release [See below]**
 
 ### Format of the Schema
 The schema is loosely based on the upcoming European standard for monitoring of online gaming. It uses different levels of schema that differentiates between data types. Each level inherets from the previous level, where level 0 is the most fundamental level.
@@ -98,3 +99,12 @@ These enumarations do not affect technically the schema but they affect the oper
 
 We have also discovered an error in the Sales Channel Types in the B2CTp2Compliance Report. Please update this field to  `online` and not `sportsbetting`.
 
+
+### Version 4.0.0 (07/04/2021) Release Candidate
+Version 4.0 adds a number of new reports that are not required for regulatory purposes but for compliance and service needs. These are **monthly reports** and should not impact the other compliance reports in any way.
+
+#### B2CTpXSmryOperation Report
+This monthly report is intended to calculate our service fees with opertors as well as capture some other performance indicators that are needed to consolidate the daily reports. All data is required in cumulative format (ie totals), except for the opening  and closing balance figures.
+
+#### Forecasted Release
+Version 4 shall be implemented before the end of April 2021 and operators must send their first report covering March 2021.
