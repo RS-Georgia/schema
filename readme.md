@@ -7,6 +7,8 @@ As part of the monitoring and reporting requirments, a set of XML-based reports 
 
 **The latest schema is: Version 3.1.0 (28/03/2021) Official Release [See below]**
 
+**SWITCH TO Ver-4.0 FOR VERSION 4.0 RELEASE CANDIDATE** 
+
 ### Format of the Schema
 The schema is loosely based on the upcoming European standard for monitoring of online gaming. It uses different levels of schema that differentiates between data types. Each level inherets from the previous level, where level 0 is the most fundamental level.
 
