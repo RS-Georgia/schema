@@ -101,10 +101,11 @@ We have also discovered an error in the Sales Channel Types in the B2CTp2Complia
 
 
 ### Version 4.0.0 (07/04/2021) Release Candidate
-Version 4.0 adds a number of new reports that are not required for regulatory purposes but for compliance and service needs. These are **monthly reports** and should not impact the other compliance reports in any way.
+Version 4.0 adds a number of new reports that are not required for regulatory purposes but for compliance and service needs. 
+After the stakeholders meeting on 13/4/2021, from feedback we received from the operators we made some changes to all reporting so that we get better understanding of the data being collected as well as the information has more meaning from the data collected.
 
 #### B2CTpXSmryOperation Report
-This monthly report is intended to calculate our service fees with opertors as well as capture some other performance indicators that are needed to consolidate the daily reports. All data is required in cumulative format (ie totals), except for the opening  and closing balance figures.
+The B2CTpXSmryOperation is a new report for B2C to be submitted **monthly**. This report is intended to calculate our service fees with opertors as well as capture some other performance indicators that are needed to consolidate the daily reports. All data is required in cumulative format (ie totals), except for the opening  and closing balance figures.
 
 #### Forecasted Release
 Version 4 shall be implemented before the end of April 2021 and operators must send their first report covering March 2021.

@@ -10,8 +10,16 @@
 	<xs:import namespace="rsi" schemaLocation=".././Level1/Level1Types.xsd"/>
 	<xs:complexType name="B2BTp1GameSummaryByServiceProvider">
 		<xs:sequence>
-			<xs:element name="SmryGmAcctByAggrt" type="GameSummaryByAggregator" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="SmryGmAcctByRGS" type="GameSummaryByRemoteGamingSystem" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="SmryGmAcctByAggrt" type="GameSummaryByAggregator" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Use this data field for games that are being supplied through an approved aggregator platform</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SmryGmAcctByRGS" type="GameSummaryByRemoteGamingSystem" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Use this data field for games that are being supplied directly from an approved Remote Gaming System (RGS)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="B2CSummaryCashFlowType">
@@ -24,7 +32,7 @@
 		<xs:sequence>
 			<xs:element name="GameVertical" type="rsi:GameVerticalType">
 				<xs:annotation>
-					<xs:documentation>Game Sector such as Casino, Sportbetting, Live Casino and Poker</xs:documentation>
+					<xs:documentation>Game Vertical such as Casino Games, Live (Dealer) Games, P2P Games, Tournaments and Poker</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="GmSmry" type="GameSummary">
@@ -52,12 +60,17 @@
 		<xs:sequence>
 			<xs:element name="TtlStakeAmt" type="rsi:MonetaryAmountPositive">
 				<xs:annotation>
-					<xs:documentation>Total Stake Amount in GEL of bets during period</xs:documentation>
+					<xs:documentation>Total Stake Amount in GEL of opened bets during period. DO NOT include Keno games</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="TtlPayOutAmt" type="rsi:MonetaryAmountPositive">
 				<xs:annotation>
-					<xs:documentation>Total amount in GEl paid out   to players for betting wins during period</xs:documentation>
+					<xs:documentation>Total amount in GEl paid out, including partial payouts, to players for wins during period.  DO NOT include Keno games</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlPartialPayOutAmt" type="rsi:MonetaryAmountPositive">
+				<xs:annotation>
+					<xs:documentation>Total amount in GEl for partial paid out to players for wins during period. Partial payout are a result of wins from system betting.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="TtlVoidedAmt" type="rsi:MonetaryAmountPositive">
@@ -67,17 +80,17 @@
 			</xs:element>
 			<xs:element name="TtlStkPendingAmt" type="rsi:MonetaryAmountPositive">
 				<xs:annotation>
-					<xs:documentation>Total Amount in GEL currently pending stakes  </xs:documentation>
+					<xs:documentation>Total Amount in GEL currently in pending stakes  </xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="TtlNmbrBetSlipsSold" type="rsi:Meter">
+			<xs:element name="TtlNmbrBetTicketsOpened" type="rsi:Meter">
 				<xs:annotation>
-					<xs:documentation>Total number of bet slips sold during the period.</xs:documentation>
+					<xs:documentation>Total number of bet tickets sold during the period.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="TtlNmbrBetSlipsCancelled" type="rsi:Meter">
+			<xs:element name="TtlNmbrBetTicketsClosed" type="rsi:Meter">
 				<xs:annotation>
-					<xs:documentation>Total number of Bet slips cancelled (ie. players got paid).</xs:documentation>
+					<xs:documentation>Total number of Bet tickets closed (ie. players got paid in full and there are no more bets left on the ticket).</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="TtlNmbrBetSlipsVoided" type="rsi:Meter">
@@ -87,7 +100,7 @@
 			</xs:element>
 			<xs:element name="TtlNmbrBetsPlaced" type="rsi:Meter">
 				<xs:annotation>
-					<xs:documentation>Total number of bets placed in Georgia</xs:documentation>
+					<xs:documentation>Total number of bets placed in Georgia. Single Bets and Express Bets this number must equal tlNmbr of Tickets Sold. For System Bets the number must be include the combinatorial bets. For example, a trixie bet would result in 4 Total Number of bets Placed (3 Doubles and 1 Treble) but 1 Total Number of Tickets Opened.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="TtlNmbrP2PBetsPlaced" type="rsi:Meter" minOccurs="0">
@@ -95,16 +108,43 @@
 					<xs:documentation>Total number of P2P bets placed in Georgia. Beting Exchange Only</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="TtlP2PStakeAmt" type="rsi:MonetaryAmountPositive" minOccurs="0"/>
-			<xs:element name="TtlNmbrVirtualBets" type="rsi:Meter" minOccurs="0"/>
-			<xs:element name="TtlVirtualBetsAmt" type="rsi:MonetaryAmountPositive" minOccurs="0"/>
+			<xs:element name="TtlP2PStakeAmt" type="rsi:MonetaryAmountPositive" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Total Amount wagered in P2P bets placed in Georgia. Beting Exchange Only</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlNmbrVirtualBets" type="rsi:Meter" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The total number of Bets placed that involved one or more virtual events. Include also virtual events that are part of Express bets or System bets.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlVirtualBetsAmt" type="rsi:MonetaryAmountPositive" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Total amount wagered on bets that involved virtual events.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlNmbrKenoGm" type="rsi:Meter" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The total number of Keno games played during period</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlKenoStkAmt" type="rsi:MonetaryAmountPositive" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Total amount wagered in Keno Games.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlKenoWonAmt" type="rsi:MonetaryAmountPositive" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Total amount Won by players from Keno Games.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="BettingSummaryBySalesChannel">
 		<xs:sequence>
 			<xs:element name="SalesChannel" type="rsi:SalesChannelType">
 				<xs:annotation>
-					<xs:documentation>Betting Summary By Sales Vertical</xs:documentation>
+					<xs:documentation>Betting Summary By Sales Channel. Predominantly there are two Sales channels whihc are online and Retail (Bet shops and Casino)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="BettingAcctSmry" type="BettingSummary">
@@ -129,6 +169,11 @@
 			<xs:element name="TtlAmtInPly" type="rsi:MonetaryAmountPositive">
 				<xs:annotation>
 					<xs:documentation>Total Amount of funds currently pending in Game/s </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlGrossFeeAmt" type="rsi:MonetaryAmountPositive" default="0" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Total gross fees  that are deducted from players stakes or wins in relation to playing the Game or Games such as rake or vig in poker, or commission on P2P Games and Tournaments. This field should be 0 for slot-type games or leave out. The Fee Amount is reported as Gross Revenue (i.e DO NOT deduct any portion that has been paid out to other parties for supplying the game). </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -185,9 +230,14 @@
 					<xs:documentation>Total Amount of winnings from games excluding betting</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="TtlRkAmt" type="rsi:MonetaryAmountPositive">
+			<xs:element name="TtlGrossFeeAmt" type="rsi:MonetaryAmountPositive">
 				<xs:annotation>
-					<xs:documentation>Total amount of income generated from players during month to reporting operator for games such as poker and other P2P games</xs:documentation>
+					<xs:documentation>Total gross fee amount generated from players during month from games such as poker and other P2P games but does not include Tournaments</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlTrnmtFeeAmt" type="rsi:MonetaryAmountPositive">
+				<xs:annotation>
+					<xs:documentation>Total fee amount generated from players during the month from Tournaments</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="TtlFreeWagersAmt" type="rsi:MonetaryAmountPositive">
@@ -195,19 +245,14 @@
 					<xs:documentation>Total Amount given in Free bets or wagers</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="TtlTrnmtIncmAmt" type="rsi:MonetaryAmountPositive">
-				<xs:annotation>
-					<xs:documentation>Total amount of income generated from players during the month from Tornaments</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="TtlOvrlysAmt" type="rsi:MonetaryAmountPositive">
 				<xs:annotation>
-					<xs:documentation>Total amount of overlays costs by operator for tournamet games such as poker tournamnts, slot tournaments, blackjack tournaments, etc.</xs:documentation>
+					<xs:documentation>Total amount of overlays costs by B2C operator (exclude any B2B fees) lost in  tournamet games such as poker tournamnts, slot tournaments, blackjack tournaments, etc.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="TtlJckptAmt" type="rsi:MonetaryAmountPositive">
 				<xs:annotation>
-					<xs:documentation>Total amount paid out in Jackpots</xs:documentation>
+					<xs:documentation>Total amount paid out from network Jackpots </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="ClsBlncAmt" type="rsi:MonetaryAmount">
@@ -226,7 +271,7 @@
 			</xs:element>
 			<xs:element name="GmAcctSmryByRGS" type="GameSummaryByRemoteGamingSystem" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>Game Accounting Summary</xs:documentation>
+					<xs:documentation>Game Accounting Summary for each approved Remote Gaming System</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
