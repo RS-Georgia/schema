@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2021 (x64) (http://www.altova.com) by Mario Galea (Random Consulting Ltd) -->
+<!-- Title: B2B Type 1 GGR Compiance report for Georgia (GE) -->
+<!-- To be filled by B2B operators -->
+<!-- Maintaining Agent: Random Systems International -->
+<!-- Maintaining Contact: Mario Galea (m@rsi.ge) -->
+<!-- Owner: Random Systems International -->
+<!-- Support: m@RSI.ge-->
+<!-- Version:4.0-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rsg="http://www.rsi.ge/schema/4_0/GGRSmry" xmlns:rge="rge" xmlns:rsi="rsi" targetNamespace="http://www.rsi.ge/schema/4_0/GGRSmry" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+	<xs:import namespace="rge" schemaLocation=".././Level2/Level2Types.xsd"/>
+	<xs:import namespace="rsi" schemaLocation=".././Level1/Level1Types.xsd"/>
+	<xs:element name="Report">
+		<xs:annotation>
+			<xs:documentation>Statutory Report for Slot Gaming Activities in Georgia. This Report has to be submitted by B2B operators on a daily basis. Do not report any P2P Games or Tornaments in the this report.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Header" type="rsi:DocumentHeader"/>
+				<xs:element name="TtlCasinoAcctSmry" type="rge:GameSummary">
+					<xs:annotation>
+						<xs:documentation>Daily totals for all Games</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="TtlCasinoAcct" type="rge:B2BTp1GameSummaryByServiceProvider">
+					<xs:annotation>
+						<xs:documentation>Daily totals split by Remote gaming System (RGS) and B2C operator for Slot and Casino Games Only</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
