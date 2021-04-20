@@ -52,6 +52,7 @@
 			<xs:enumeration value="Tournament"/>
 			<xs:enumeration value="Pools"/>
 			<xs:enumeration value="P2P Games"/>
+			<xs:enumeration value="Keno"/>
 			<xs:enumeration value="Other"/>
 		</xs:restriction>
 	</xs:simpleType>
@@ -194,7 +195,7 @@
 			</xs:element>
 			<xs:element name="RptPrd" type="ISODuration">
 				<xs:annotation>
-					<xs:documentation>Report Covering Period. Minimum is 1Month, maximum is one day.</xs:documentation>
+					<xs:documentation>Report Covering Period. Use the following - P1M for monthly reports. P1D for daily reports.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="RprtToCntry" type="ISOCountryCode">
