@@ -12,19 +12,14 @@
 	<xs:import namespace="rsi" schemaLocation=".././Level1/Level1Types.xsd"/>
 	<xs:element name="Report">
 		<xs:annotation>
-			<xs:documentation>Statutory Report for Slot Gaming Activities in Georgia. This Report has to be submitted by B2B operators on a daily basis. Do not report any P2P Games or Tornaments in the this report.</xs:documentation>
+			<xs:documentation>Statutory Report for Slot Gaming Activities in Georgia. This Report has to be submitted by B2B operators on a MONTHLY basis.</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="Header" type="rsi:DocumentHeader"/>
-				<xs:element name="TtlCasinoAcctSmry" type="rge:GameSummary">
+				<xs:element name="TtlGmAcctSmry" type="rge:GameSummary">
 					<xs:annotation>
 						<xs:documentation>Daily totals for all Games</xs:documentation>
-					</xs:annotation>
-				</xs:element>
-				<xs:element name="TtlCasinoAcct" type="rge:B2BTp1GameSummaryByServiceProvider">
-					<xs:annotation>
-						<xs:documentation>Daily totals split by Remote gaming System (RGS) and B2C operator for Slot and Casino Games Only</xs:documentation>
 					</xs:annotation>
 				</xs:element>
 			</xs:sequence>

@@ -9,6 +9,8 @@
 		<File FilePath="4_0\GGRSmry\B2CTp1SmryCompliance.xsd" HomeFolder="Yes"/>
 		<File FilePath="4_0\GGRSmry\B2CTp2SmryCompliance.xsd" HomeFolder="Yes"/>
 		<File FilePath="4_0\OprSmry\B2CTpXSmryOperation.xsd" HomeFolder="Yes"/>
+		<File FilePath="4_0\Level1\Level1Types.xsd" HomeFolder="Yes"/>
+		<File FilePath="4_0\Level2\Level2Types.xsd" HomeFolder="Yes"/>
 	</Folder>
 	<Folder FolderName="Entities" ExtStr="ent"/>
 </Project>
