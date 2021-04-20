@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2021 (x64) (http://www.altova.com) by Mario Galea (Random Consulting Ltd) -->
 <!-- Title: GGR Compiance report for Georgia (GE) -->
 <!-- To be filled by B2C operators -->
 <!-- Maintaining Agent: Random Systems International -->
@@ -15,7 +16,7 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="Header" type="rsi:DocumentHeader"/>
-				<xs:element name="B2CSmryGGRbyGmVrtcl" type="rge:B2CSummaryGameAccountingByGameVertical" maxOccurs="unbounded"/>
+				<xs:element name="B2CSmryGGRbyGmVrtcl" type="rge:GameSummaryByGameVertical"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
