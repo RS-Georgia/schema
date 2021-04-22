@@ -65,7 +65,7 @@
 			</xs:element>
 			<xs:element name="TtlPayOutAmt" type="rsi:MonetaryAmountPositive">
 				<xs:annotation>
-					<xs:documentation>Total amount in GEl paid out, including partial payouts, to players for wins during period.  DO NOT include Keno games</xs:documentation>
+					<xs:documentation>Total amount in GEl paid out, including partial payouts, to players for wins during period and voided games.  DO NOT include Keno games</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="TtlPartialPayOutAmt" type="rsi:MonetaryAmountPositive">
@@ -93,7 +93,7 @@
 					<xs:documentation>Total number of Bet tickets closed (ie. players got paid in full and there are no more bets left on the ticket).</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="TtlNmbrBetSlipsVoided" type="rsi:Meter">
+			<xs:element name="TtlNmbrBetTicketsVoided" type="rsi:Meter">
 				<xs:annotation>
 					<xs:documentation>Total number of bet slips voided (i.e. where not paid due to event cancellation, etc.)</xs:documentation>
 				</xs:annotation>
@@ -111,6 +111,11 @@
 			<xs:element name="TtlP2PStakeAmt" type="rsi:MonetaryAmountPositive" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Total Amount wagered in P2P bets placed in Georgia. Beting Exchange Only</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlP2PFeeAmt" type="rsi:MonetaryAmountPositive" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Total Amount fee paid for player to take part in P2P bet. Applies only to betting exchanges</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="TtlNmbrVirtualBets" type="rsi:Meter" minOccurs="0">
