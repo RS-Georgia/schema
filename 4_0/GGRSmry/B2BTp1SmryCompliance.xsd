@@ -22,7 +22,7 @@
 						<xs:documentation>Daily totals for all Type 1 Games.</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				<xs:element name="TtlTp1Acct" type="rge:Type1SummaryByServiceProvider">
+				<xs:element name="TtlTp1Acct" type="rge:Type1GameSummaryByServiceProvider">
 					<xs:annotation>
 						<xs:documentation>Daily totals split by Remote gaming System (RGS) and B2C operator for Slot and Casino Games Only</xs:documentation>
 					</xs:annotation>
