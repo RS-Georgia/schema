@@ -42,7 +42,7 @@
 			<xs:element name="SmryGmWgrTrf" type="GameSummary"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="B2CSummaryGameAccountingByGameVertical">
+	<xs:complexType name="GameSummaryByGameVertical">
 		<xs:sequence>
 			<xs:element name="GameVertical" type="rsi:GameVerticalType">
 				<xs:annotation>
@@ -282,12 +282,12 @@
 			</xs:element>
 			<xs:element name="TtlBetStkAmt" type="rsi:MonetaryAmountPositive">
 				<xs:annotation>
-					<xs:documentation>Total Amount of Betting stakes.</xs:documentation>
+					<xs:documentation>Total Amount of Betting stakes. This means the sum of ALL   funds that were transferred from Players wallet to bets</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="TtlBetPytAmt" type="rsi:MonetaryAmountPositive">
 				<xs:annotation>
-					<xs:documentation>Total Amount of Payout made to players from betting duting month</xs:documentation>
+					<xs:documentation>Total Amount of Payout made to players from betting duting month. This means the some of funds that were transferred from Games to players wallet including winnings, partial payouts and voided bets.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="TtlBetVdAmt" type="rsi:MonetaryAmountPositive">

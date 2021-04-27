@@ -11,7 +11,7 @@
 	<xs:import namespace="rsi" schemaLocation=".././Level1/Level1Types.xsd"/>
 	<xs:element name="Report">
 		<xs:annotation>
-			<xs:documentation>Statutory Report for Gaming Activities in Georgia. This Report has to be submitted by B2B operators on a monthly basis</xs:documentation>
+			<xs:documentation>Statutory Report for Gaming Activities in Georgia. This Report has to be submitted by B2C operators on a monthly basis</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
