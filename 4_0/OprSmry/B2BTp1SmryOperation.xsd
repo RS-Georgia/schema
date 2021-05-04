@@ -7,7 +7,7 @@
 <!-- Owner: Random Systems International -->
 <!-- Support: m@RSI.ge-->
 <!-- Version:4.0-->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rsg="http://www.rsi.ge/schema/4_0/GGRSmry" xmlns:rge="rge" xmlns:rsi="rsi" targetNamespace="http://www.rsi.ge/schema/4_0/GGRSmry" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rsg="http://www.rsi.ge/schema/4_0/OprSmry" xmlns:rge="rge" xmlns:rsi="rsi" targetNamespace="http://www.rsi.ge/schema/4_0/OprSmry" elementFormDefault="unqualified" attributeFormDefault="unqualified">
 	<xs:import namespace="rge" schemaLocation=".././Level2/Level2Types.xsd"/>
 	<xs:import namespace="rsi" schemaLocation=".././Level1/Level1Types.xsd"/>
 	<xs:element name="Report">
