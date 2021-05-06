@@ -19,7 +19,7 @@
 				<xs:element name="Header" type="rsi:DocumentHeader"/>
 				<xs:element name="TtlGmAcctSmry" type="rge:GameSummary">
 					<xs:annotation>
-						<xs:documentation>Daily totals for all Games</xs:documentation>
+						<xs:documentation>MONTHLY totals for all Games</xs:documentation>
 					</xs:annotation>
 				</xs:element>
 			</xs:sequence>
