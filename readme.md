@@ -5,9 +5,12 @@ The Selected Person is Random Systems Georgia, a company incorporated according 
 
 As part of the monitoring and reporting requirments, a set of XML-based reports are required to be submitted on a periodic basis by approved operators and game service providers.
 
-**The latest schema is: Version 3.1.0 (28/03/2021) Official Release [See below]**
+**The latest schema is: Version 4.0.0 (28/03/2021) Official Release [See below]**
 
-**SWITCH TO Ver-4.0 FOR VERSION 4.0 RELEASE CANDIDATE** 
+**SWITCH TO Ver-4.0 BRANCH FOR VERSION 4.0** 
+
+### Uploading Reports
+Reports must be uploaded daily before 8am (local time) to earp.rsi.ge. You need a username and password to be bale to upload reports. These are issued by RSG administrator on request. Only one account per licensee is allowed.
 
 ### Format of the Schema
 The schema is loosely based on the upcoming European standard for monitoring of online gaming. It uses different levels of schema that differentiates between data types. Each level inherets from the previous level, where level 0 is the most fundamental level.
