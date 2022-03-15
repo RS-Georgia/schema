@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2021 (x64) (http://www.altova.com) by Mario Galea (Random Consulting Ltd) -->
+<!-- Title: Betting Compiance report for Georgia (GE) -->
+<!-- To be filled by B2C operators -->
+<!-- Maintaining Agent: Random Systems International -->
+<!-- Owner: Random Systems International -->
+<!-- Support: m@RSI.ge-->
+<!-- Version:3.0-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rs="http://www.rsi.ge/schema/3_1/GGRSmry" xmlns:rge="rge" xmlns:rsi="rsi" targetNamespace="http://www.rsi.ge/schema/3_1/GGRSmry" elementFormDefault="unqualified" attributeFormDefault="unqualified">	
+	<xs:import namespace="rge" schemaLocation=".././Level2/Level2Types.xsd"/>
+	<xs:import namespace="rsi" schemaLocation=".././Level1/Level1Types.xsd"/>
+	<xs:element name="Report">
+		<xs:annotation>
+			<xs:documentation>Statutory Report for Betting Activities in Georgia. This report shall be submitted by B2C operators on a daily basis</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Header" type="rsi:DocumentHeader"/>
+				<xs:element name="BettingSmrybySlsChnl" type="rge:BettingSummaryBySalesChannel" maxOccurs="3"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

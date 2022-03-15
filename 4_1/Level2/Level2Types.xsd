@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2021 (x64) (http://www.altova.com) by Mario Galea (Random Consulting Ltd) -->
+<!-- by Mario Galea (Random Consulting Ltd) -->
+<!-- Title: Common Data types based on the Regulatory Reporting Interface (RRI) by Gaming Standards Association -->
+<!-- Maintaining Agent: Random Systems International -->
+<!-- Owner: Random Systems International -->
+<!-- Support: m@RSI.ge-->
+<!-- Version:4.0-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="rge" xmlns:rsi="rsi" targetNamespace="rge" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="rsi" schemaLocation=".././Level1/Level1Types.xsd"/>
+	<xs:complexType name="Type1GameSummaryByServiceProvider">
+		<xs:sequence>
+			<xs:element name="SmryGmAcctByAggrt" type="GameSummaryByAggregator" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Use this data field for games that are being supplied through an approved aggregator platform</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SmryGmAcctByRGS" type="GameSummaryByRemoteGamingSystem" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Use this data field for games that are being supplied directly from an approved Remote Gaming System (RGS)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Type3GameSummaryByServiceProvider">
+		<xs:sequence>
+			<xs:element name="SmryP2PGmAcctByAggrt" type="P2PGameSummaryByAggregator" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Use this data field for games that are being supplied through an approved aggregator platform</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SmrP2PyGmAcctByRGS" type="P2PGameSummaryByRemoteGamingSystem" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Use this data field for games that are being supplied directly from an approved Remote Gaming System (RGS)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="B2CSummaryCashFlowType">
+		<xs:sequence>
+			<xs:element name="SmryPlyrAccntTrf" type="B2CSummaryPlayerAccountTransfersType"/>
+			<xs:element name="SmryGmWgrTrf" type="GameSummary"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GameSummaryByGameVertical">
+		<xs:sequence>
+			<xs:element name="GameVertical" type="rsi:GameVerticalType">
+				<xs:annotation>
+					<xs:documentation>Game Vertical such as Casino Games, Live (Dealer) Games, P2P Games, Tournaments and Poker</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="GmSmry" type="GameSummary">
+				<xs:annotation>
+					<xs:documentation>Game Accounting Summary</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="B2CSummaryPlayerAccountTransfersType">
+		<xs:sequence>
+			<xs:element name="TtlDpsts" type="rsi:MonetaryAmountPositive">
+				<xs:annotation>
+					<xs:documentation>Total Amount Deposited by Players</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlWthdrwls" type="rsi:MonetaryAmountPositive">
+				<xs:annotation>
+					<xs:documentation>Total Withdrawals by Players</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BettingSummary">
+		<xs:sequence>
+			<xs:element name="TtlStakeAmt" type="rsi:MonetaryAmountPositive">
+				<xs:annotation>
+					<xs:documentation>Total Stake Amount in GEL of opened bets during period. DO NOT include Keno games</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlPayOutAmt" type="rsi:MonetaryAmountPositive">
+				<xs:annotation>
+					<xs:documentation>Total amount in GEl paid out, including partial payouts, to players for wins during period and voided games.  DO NOT include Keno games</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlPartialPayOutAmt" type="rsi:MonetaryAmountPositive">
+				<xs:annotation>
+					<xs:documentation>Total amount in GEl for partial paid out to players for wins during period. Partial payout are a result of wins from system betting.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlVoidedAmt" type="rsi:MonetaryAmountPositive">
+				<xs:annotation>
+					<xs:documentation>Total amount in GEl of voided stakes and funds returned to players  (i.e. where not paid due to event cancellation, etc.)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlStkPendingAmt" type="rsi:MonetaryAmountPositive">
+				<xs:annotation>
+					<xs:documentation>Total Amount in GEL currently in pending stakes  </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlNmbrBetTicketsOpened" type="rsi:Meter">
+				<xs:annotation>
+					<xs:documentation>Total number of bet tickets sold during the period.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlNmbrBetTicketsClosed" type="rsi:Meter">
+				<xs:annotation>
+					<xs:documentation>Total number of Bet tickets closed (ie. players got paid in full and there are no more bets left on the ticket).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlNmbrBetTicketsVoided" type="rsi:Meter">
+				<xs:annotation>
+					<xs:documentation>Total number of bet slips voided (i.e. where not paid due to event cancellation, etc.)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlNmbrBetsPlaced" type="rsi:Meter">
+				<xs:annotation>
+					<xs:documentation>Total number of bets placed in Georgia. Single Bets and Express Bets this number must equal tlNmbr of Tickets Sold. For System Bets the number must be include the combinatorial bets. For example, a trixie bet would result in 4 Total Number of bets Placed (3 Doubles and 1 Treble) but 1 Total Number of Tickets Opened.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlNmbrP2PBetsPlaced" type="rsi:Meter" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Total number of P2P bets placed in Georgia. Beting Exchange Only</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlP2PStakeAmt" type="rsi:MonetaryAmountPositive" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Total Amount wagered in P2P bets placed in Georgia. Beting Exchange Only</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlP2PFeeAmt" type="rsi:MonetaryAmountPositive" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Total Amount fee paid for player to take part in P2P bet. Applies only to betting exchanges</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlNmbrVirtualBets" type="rsi:Meter" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The total number of Bets placed that involved one or more virtual events. Include also virtual events that are part of Express bets or System bets.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlVirtualBetsAmt" type="rsi:MonetaryAmountPositive" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Total amount wagered on bets that involved virtual events.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlNmbrKenoGm" type="rsi:Meter" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The total number of Keno games played during period</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlKenoStkAmt" type="rsi:MonetaryAmountPositive" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Total amount wagered in Keno Games.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlKenoWonAmt" type="rsi:MonetaryAmountPositive" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Total amount Won by players from Keno Games.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BettingSummaryBySalesChannel">
+		<xs:sequence>
+			<xs:element name="SalesChannel" type="rsi:SalesChannelType">
+				<xs:annotation>
+					<xs:documentation>Betting Summary By Sales Channel. Predominantly there are two Sales channels whihc are online and Retail (Bet shops and Casino)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BettingAcctSmry" type="BettingSummary">
+				<xs:annotation>
+					<xs:documentation>Game Accounting Summary</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GameSummary">
+		<xs:sequence>
+			<xs:element name="TtlAmttoGm" type="rsi:MonetaryAmountPositive">
+				<xs:annotation>
+					<xs:documentation>Totla Amount of Funds from Players to Game/s.(ie Stakes or Wagers)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlAmtfrmGm" type="rsi:MonetaryAmountPositive">
+				<xs:annotation>
+					<xs:documentation>Total amount of funds transfers from Game/s to Players. (i.e Wins to Player)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlAmtInPly" type="rsi:MonetaryAmountPositive">
+				<xs:annotation>
+					<xs:documentation>Total Amount of funds currently pending in Game/s at tiem of reporting</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlAmtFreeSpntoGm" type="rsi:MonetaryAmountPositive" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Total amount of Free Spins played in  games.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlAmtWonfrmFreeSpnPlyd" type="rsi:MonetaryAmountPositive" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Total amount Won from Free Spins  played.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlGrossFeeAmt" type="rsi:MonetaryAmountPositive" default="0" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Total gross fees  that are deducted from players stakes or wins in relation to playing the Game or Games such as rake or vig in poker, or commission on P2P Games and Tournaments. This field should be 0 for slot-type games or leave out. The Fee Amount is reported as Gross Revenue (i.e DO NOT deduct any portion that has been paid out to other parties for supplying the game). </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GameSummaryByAggregator">
+		<xs:sequence>
+			<xs:element name="AggrtID" type="rsi:Description">
+				<xs:annotation>
+					<xs:documentation>Aggregator ID as identified by the B2B platform</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="GmAcctSmryByRGS" type="GameSummaryByRemoteGamingSystem" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Game Accounting Summary for each approved Remote Gaming System</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GameSummaryByB2COperatorByGame">
+		<xs:sequence>
+			<xs:element name="B2COprID" type="rsi:Max35Text">
+				<xs:annotation>
+					<xs:documentation>B2C Operator</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="GmAcctSmryByGmID" type="GameSummaryByGameID" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Game Accounting Summary by Game ID</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GameSummaryByGameID">
+		<xs:sequence>
+			<xs:element name="GameID" type="rsi:Description">
+				<xs:annotation>
+					<xs:documentation>Game ID as identified by the B2B platform</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="GmAcctSmry" type="GameSummary">
+				<xs:annotation>
+					<xs:documentation>Game Accounting Summary</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GameSummaryByRemoteGamingSystem">
+		<xs:sequence>
+			<xs:element name="RmtGmSysID" type="rsi:Description">
+				<xs:annotation>
+					<xs:documentation>Remote Gaming System ID as identified by the B2B platform or Aggregator</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="GmAcctSmryByOprByGm" type="GameSummaryByB2COperatorByGame" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Game Accounting Summary</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OperatingSummary">
+		<xs:sequence>
+			<xs:element name="TtlPlyrNmbr" type="rsi:Counter">
+				<xs:annotation>
+					<xs:documentation>Total Number of Players at the end of the month. Active players means players who actually have money in their wallets , whether these have played or not during the month. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlActvPlyrNmbr" type="rsi:Counter">
+				<xs:annotation>
+					<xs:documentation>Total Number of Players who where active during the month. Active players means players who have deposited, withdrawn, played or won during the month</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OpnBlncAmt" type="rsi:MonetaryAmount">
+				<xs:annotation>
+					<xs:documentation>Opening Balance Amount in Player Account the beginning of the month</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlDpstsAmt" type="rsi:MonetaryAmountPositive">
+				<xs:annotation>
+					<xs:documentation>Total Amount of Deposits made by player during month </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlWthdrwAmt" type="rsi:MonetaryAmountPositive">
+				<xs:annotation>
+					<xs:documentation>Total Amount of funds withdrawn by players during month</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlBetStkAmt" type="rsi:MonetaryAmountPositive">
+				<xs:annotation>
+					<xs:documentation>Total Amount of Betting stakes. This means the sum of ALL   funds that were transferred from Players wallet to bets</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlBetPytAmt" type="rsi:MonetaryAmountPositive">
+				<xs:annotation>
+					<xs:documentation>Total Amount of Payout made to players from betting duting month. This means the some of funds that were transferred from Games to players wallet including winnings, partial payouts and voided bets.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlBetVdAmt" type="rsi:MonetaryAmountPositive">
+				<xs:annotation>
+					<xs:documentation>Total amount of Bets voided during month</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlGmWgrAmt" type="rsi:MonetaryAmountPositive">
+				<xs:annotation>
+					<xs:documentation>Total Amount of wagering on games excluding betting</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlGmWinningsAmt" type="rsi:MonetaryAmountPositive">
+				<xs:annotation>
+					<xs:documentation>Total Amount of winnings from games excluding betting</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlGrossFeeAmt" type="rsi:MonetaryAmountPositive">
+				<xs:annotation>
+					<xs:documentation>Total gross fee amount generated from players during month from games such as poker and other P2P games but does not include Tournaments</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlTrnmtFeeAmt" type="rsi:MonetaryAmountPositive">
+				<xs:annotation>
+					<xs:documentation>Total fee amount generated from players during the month from Tournaments</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlFreeWagersAmt" type="rsi:MonetaryAmountPositive">
+				<xs:annotation>
+					<xs:documentation>Total Amount given in Free bets or wagers</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlOvrlysAmt" type="rsi:MonetaryAmountPositive">
+				<xs:annotation>
+					<xs:documentation>Total amount of overlays costs by B2C operator (exclude any B2B fees) lost in  tournamet games such as poker tournamnts, slot tournaments, blackjack tournaments, etc.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlJckptAmt" type="rsi:MonetaryAmountPositive">
+				<xs:annotation>
+					<xs:documentation>Total amount paid out from network Jackpots </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ClsBlncAmt" type="rsi:MonetaryAmount">
+				<xs:annotation>
+					<xs:documentation>Closing Balance Amount in Players Accounts for the month</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="P2PGameSummary">
+		<xs:sequence>
+			<xs:element name="TtlAmttoGm" type="rsi:MonetaryAmountPositive">
+				<xs:annotation>
+					<xs:documentation>Totla Amount of Funds from Players to Game/s.(ie Stakes or Wagers)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlAmtfrmGm" type="rsi:MonetaryAmountPositive">
+				<xs:annotation>
+					<xs:documentation>Total amount of funds transfers from Game/s to Players.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlAmtInPly" type="rsi:MonetaryAmountPositive">
+				<xs:annotation>
+					<xs:documentation>Total Amount of funds currently pending in Game/s at time of reporting </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TtlGrossFeeAmt" type="rsi:MonetaryAmountPositive" default="0">
+				<xs:annotation>
+					<xs:documentation>Total gross fees  that are deducted from players stakes or wins in relation to playing the Game or Games such as rake or vig in poker, or commission on P2P Games and Tournaments. This field should be 0 for slot-type games or leave out. The Fee Amount is reported as Gross Revenue (i.e DO NOT deduct any portion that has been paid out to other parties for supplying the game). </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="P2PGameSummaryByAggregator">
+		<xs:sequence>
+			<xs:element name="AggrtID" type="rsi:Description">
+				<xs:annotation>
+					<xs:documentation>Aggregator ID as identified by the B2B platform</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="P2PGmAcctSmryByRGS" type="P2PGameSummaryByRemoteGamingSystem" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Game Accounting Summary for each approved Remote Gaming System</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="P2PGameSummaryByB2COperatorByGame">
+		<xs:sequence>
+			<xs:element name="B2COprID" type="rsi:Max35Text">
+				<xs:annotation>
+					<xs:documentation>B2C Operator</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="P2PGmAcctSmryByGmID" type="P2PGameSummaryByGameID" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Game Accounting Summary by Game ID</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="P2PGameSummaryByGameID">
+		<xs:sequence>
+			<xs:element name="GameID" type="rsi:Description">
+				<xs:annotation>
+					<xs:documentation>Game ID as identified by the B2B platform</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="P2PGmAcctSmry" type="P2PGameSummary">
+				<xs:annotation>
+					<xs:documentation>Game Accounting Summary</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="P2PGameSummaryByRemoteGamingSystem">
+		<xs:sequence>
+			<xs:element name="RmtGmSysID" type="rsi:Description">
+				<xs:annotation>
+					<xs:documentation>Remote Gaming System ID as identified by the B2B platform or Aggregator</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="P2PGmAcctSmryByOprByGm" type="P2PGameSummaryByB2COperatorByGame" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Game Accounting Summary</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
