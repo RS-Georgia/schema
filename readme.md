@@ -5,8 +5,7 @@ The Selected Person is Random Systems Georgia, a company incorporated according 
 
 As part of the monitoring and reporting requirments, a set of XML-based reports are required to be submitted on a periodic basis by approved operators and game service providers.
 
-**The latest schema is: Version 3.1.0 (28/03/2021) Official Release [See below]**
-**The upcoming schema is: Version 4.0.0 (07/04/2021) Official Release [See below]**
+**The  schema is: Version 4.1.0 (07/03/2022) Official Release [See below]**
 
 ### Format of the Schema
 The schema is loosely based on the upcoming European standard for monitoring of online gaming. It uses different levels of schema that differentiates between data types. Each level inherets from the previous level, where level 0 is the most fundamental level.
@@ -100,21 +99,5 @@ These enumarations do not affect technically the schema but they affect the oper
 We have also discovered an error in the Sales Channel Types in the B2CTp2Compliance Report. Please update this field to  `online` and not `sportsbetting`.
 
 
-### Version 4.0.0 (07/04/2021) Release Candidate
-Version 4.0 adds a number of new reports that are not required for regulatory purposes but for compliance and service needs. 
-After the stakeholders meeting on 13/4/2021, from feedback we received from the operators we made some changes to all reporting so that we get better understanding of the data being collected as well as the information has more meaning from the data collected.
-
-#### B2CTpXSmryOperation Report
-The B2CTpXSmryOperation is a new report for B2C to be submitted **monthly**. This report is intended to calculate our service fees with opertors as well as capture some other performance indicators that are needed to consolidate the daily reports. All data is required in cumulative format (ie totals), except for the opening  and closing balance figures.
-
-#### Total Pending Amount Changed
-The Total Funds in play in the Game Summary Data element is now optional. This has been done to reduce the data size of report files.
-
-#### TtlGrossFeeAmt
-Game summary element has a new optional field `TtlGrossFeeAmt` to report Total Gross Fees. Total gross fees that are deducted from players stakes or wins in relation to playing the Game or Games such as rake or vig in poker, or commission on P2P Games and Tournaments. This field should be 0 for slot-type games or just leave out. The Fee Amount is reported as Gross Revenue (i.e DO NOT deduct any portion that has been paid out to other parties for supplying the game). 
-
-#### New Game Type
-`GameVerticalTypes` in  Level 1 Types now include Keno for those whow wish to report it seperately. However Keno games still need to be rpeorted under betting for accounting puirposes. Reporting Keno under Type 1 games is only for statisitical purposes.
-
-#### Forecasted Release for Version 4
-Version 4 shall be implemented before the end of April 2021 and operators must send their first report covering March 2021.
+### Version 4.1.0 (07/04/2021) Release Candidate
+Version 4.1 adds a number of new fields to support the changes in the law. This version should officially be V4.1.1, as no new reports were generated. However due to the fact that there was a statutory requirement we decided that it should be placed under a new sub-version. 
